@@ -48,7 +48,7 @@ class Adapter(): RecyclerView.Adapter<Adapter.MyViewHolder>() {
 
             photoImageView.setOnClickListener{
                 if ( Pac.types == null) {
-                delegate?.OpenImage(URL = Pac.imageUrl,ID = Pac.id, Name = Pac.name, typ = "Типа неть")}
+                delegate?.OpenImage(URL = Pac.imageUrl,ID = Pac.id, Name = Pac.name, typ = "Типа нет")}
                 else {delegate?.OpenImage(URL = Pac.imageUrl,ID = Pac.id, Name = Pac.name, typ = Pac.types.toString())}
 
             }}}}
