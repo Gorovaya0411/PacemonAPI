@@ -13,9 +13,9 @@ class Pacn : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pacn)
         Picasso.get().load(intent?.extras?.getString("image") ?: "").fit().into(imageButton)
-        val Id = intent.getStringExtra("id")?: "Id Неть"
-        val Name = intent.getStringExtra("Name")?: "Name Неть"
-        val typ = intent.getStringExtra("typ")?: "Типа Неть"
+        val Id = intent.getStringExtra("id")?: "Id Нет"
+        val Name = intent.getStringExtra("Name")?: "Имени нет"
+        val typ = intent.getStringExtra("typ")?: "Типа нет"
         textView.text = Name.toString()
         textView2.text = Id.toString()
         textView3.text = typ.toString()
