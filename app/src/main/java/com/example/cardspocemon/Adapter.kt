@@ -7,18 +7,18 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.item_image.view.*
 
 interface PackemonDelegate {
     fun OpenImage (URL: String?, ID:String?, Name:String?, typ:String?)
 }
 
 
-class Adapter(): RecyclerView.Adapter<Adapter.MyViewHolder>() {
-    private var delegate: PackemonDelegate? = null
-    private val dataPac: MutableList<cards> = ArrayList()
+class Adapter(var delegate: PackemonDelegate? = null): RecyclerView.Adapter<Adapter.MyViewHolder>() {
+
+    private var dataPac = listOf<cards>()
  fun setData(data: List<cards>){
-    dataPac.clear()
-     dataPac.addAll(data)
+     this.dataPac = data
      notifyDataSetChanged()
  }
     fun attachDelegete (delegate: PackemonDelegate){
@@ -28,16 +28,14 @@ class Adapter(): RecyclerView.Adapter<Adapter.MyViewHolder>() {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_image,parent,false), delegate = delegate)
     }
 
-    override fun getItemCount(): Int {
-        return dataPac.count()
-    }
+    override fun getItemCount(): Int = dataPac.count()
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(dataPac[position])
 
     }
     class MyViewHolder(itemView: View, val delegate: PackemonDelegate?):RecyclerView.ViewHolder(itemView){
-        var photoImageView: ImageView = itemView.findViewById(R.id.iv_photo)
+        var photoImageView: ImageView = itemView.iv_photo
 
 
 

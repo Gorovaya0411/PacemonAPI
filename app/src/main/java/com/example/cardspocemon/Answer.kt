@@ -4,7 +4,7 @@ package com.example.cardspocemon
        val id: String,
        val  name: String,
        val imageUrl: String,
-       val types: List<String>
+       val types: List<String>?
 
 )
 
