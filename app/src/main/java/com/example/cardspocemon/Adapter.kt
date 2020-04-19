@@ -46,7 +46,7 @@ class Adapter(var delegate: PackemonDelegate? = null): RecyclerView.Adapter<Adap
 
             photoImageView.setOnClickListener{
                 if ( Pac.types == null) {
-                delegate?.OpenImage(URL = Pac.imageUrl,ID = Pac.id, Name = Pac.name, typ = "Типа неть")}
+                delegate?.OpenImage(URL = Pac.imageUrl,ID = Pac.id, Name = Pac.name, typ = "Типа нет")}
                 else {delegate?.OpenImage(URL = Pac.imageUrl,ID = Pac.id, Name = Pac.name, typ = Pac.types.toString())}
 
             }}}}
